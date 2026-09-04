@@ -1,11 +1,12 @@
 export default function PaymentMethodSelector({
     selectedMethod,
-    OnSelect,
+    onSelect,
     disabled = false
 }) {
     return (
         <fieldset
           className="payment-method-selector"
+          disabled={disabled}
           >
             <legend>How would you like to pay?</legend>
 
@@ -21,7 +22,7 @@ export default function PaymentMethodSelector({
                 name="paymentMethod"
                 value="square"
                 checked={selectedMethod === "square"}
-                onChange={() => onselect("square")}
+                onChange={() => onSelect("square")}
                 />
 
                 <span>
@@ -42,7 +43,7 @@ export default function PaymentMethodSelector({
                   name="paymentMethod"
                   value="klarna"
                   checked={selectedMethod === "klarna"}
-                  onChange={() => onselect("klarna")}
+                  onChange={() => onSelect("klarna")}
                 />
 
                 <span>
